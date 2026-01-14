@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CVM Downloader</title>
+    <meta
+      name="description"
+      content="Baixe o último regulamento do fundo direto da CVM usando o CNPJ."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-api-base="">
+    <main class="page">
+      <section class="grid">
+        <header>
+          <h1>CVM Downloader</h1>
+          <p>Digite o CNPJ do fundo e baixe o último regulamento direto da CVM.</p>
+        </header>
+
+        <section class="panel">
+          <label class="label" for="cnpj-input">CNPJ do fundo</label>
+          <input
+            id="cnpj-input"
+            class="input"
+            placeholder="00000000000000"
+            maxlength="18"
+            inputmode="numeric"
+            autocomplete="off"
+          />
+          <div class="actions">
+            <button class="button" id="download-btn" type="button">
+              Baixar último regulamento
+            </button>
+            <button class="button ghost" id="clear-btn" type="button">
+              Limpar
+            </button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="pulse"><span class="dot"></span> API ativa</div>
+          <div class="status" id="status-block">
+            <div><strong>Status:</strong> aguardando</div>
+            <div><strong>Último arquivo:</strong> -</div>
+            <div><strong>Pasta:</strong> -</div>
+          </div>
+        </section>
+      </section>
+
+      <section class="right">
+        <div class="card">
+          <h3>Resposta</h3>
+          <pre class="output" id="output">{}</pre>
+        </div>
+        <div class="card">
+          <h3>Ajuda rapida</h3>
+          <p class="output">
+            Endpoint usado: <br />
+            <strong>POST /regulamentos/ultimo</strong><br />
+            Body: { "cnpj": "00000000000000" }
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
