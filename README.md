@@ -1,6 +1,6 @@
-# cvm-regulamento-downloader (Signal Desk)
+# cvm-regulamento-downloader
 
-Servico em Node.js + TypeScript que consulta a CVM para localizar o regulamento mais recente de um fundo (por CNPJ), baixa o PDF e salva em disco. Inclui um frontend estatico (Signal Desk) servido pelo proprio backend.
+Servico em Node.js + TypeScript que consulta a CVM para localizar o regulamento mais recente de um fundo (por CNPJ), baixa o PDF e salva em disco. Inclui um frontend estatico servido pelo proprio backend.
 
 ## O que faz
 
